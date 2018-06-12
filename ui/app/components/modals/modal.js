@@ -20,6 +20,9 @@ const HideTokenConfirmationModal = require('./hide-token-confirmation-modal')
 const CustomizeGasModal = require('../customize-gas-modal')
 const NotifcationModal = require('./notification-modal')
 const ConfirmResetAccount = require('./notification-modals/confirm-reset-account')
+const ConfirmEther = require('./confirm-ether-modal')
+const SubmittedTransaction = require('./submitted-transaction-modal')
+
 
 const accountModalStyle = {
   mobileModalStyle: {
@@ -207,6 +210,30 @@ const MODALS = {
 
   CONFIRM_RESET_ACCOUNT: {
     contents: h(ConfirmResetAccount),
+    mobileModalStyle: {
+      width: '95%',
+      top: getEnvironmentType(window.location.href) === ENVIRONMENT_TYPE_POPUP ? '52vh' : '36.5vh',
+    },
+    laptopModalStyle: {
+      width: '473px',
+      top: 'calc(33% + 45px)',
+    },
+  },
+
+  CONFIRM_ETHER: {
+    contents: h(ConfirmEther),
+    mobileModalStyle: {
+      width: '95%',
+      top: getEnvironmentType(window.location.href) === ENVIRONMENT_TYPE_POPUP ? '52vh' : '36.5vh',
+    },
+    laptopModalStyle: {
+      width: '473px',
+      top: 'calc(33% + 45px)',
+    },
+  },
+
+  SUBMITTED_TRANSACTION: {
+    contents: h(SubmittedTransaction),
     mobileModalStyle: {
       width: '95%',
       top: getEnvironmentType(window.location.href) === ENVIRONMENT_TYPE_POPUP ? '52vh' : '36.5vh',

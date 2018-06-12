@@ -841,6 +841,7 @@ function updateTransaction (txData) {
     log.debug(`actions calling background.updateTx`)
     background.updateTransaction(txData, (err) => {
       dispatch(actions.hideLoadingIndication())
+      // dispatch(actions.showModal({ name: 'CONFIRM_ETHER' }))      
       dispatch(actions.updateTransactionParams(txData.id, txData.txParams))
       if (err) {
         dispatch(actions.txError(err))
@@ -860,6 +861,7 @@ function updateAndApproveTx (txData) {
     return new Promise((resolve, reject) => {
       background.updateAndApproveTransaction(txData, err => {
         dispatch(actions.hideLoadingIndication())
+        dispatch(actions.showModal({ name: 'SUBMITTED_TRANSACTION' }))
         dispatch(actions.updateTransactionParams(txData.id, txData.txParams))
         dispatch(actions.clearSend())
 

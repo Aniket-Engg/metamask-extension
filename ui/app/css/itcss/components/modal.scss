@@ -182,6 +182,38 @@
   padding: 10px;
   font-size: 18px;
 }
+//Submitted Transaction Modal Container
+
+.submitted-transaction-modal-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 22px 0 26px 0;
+  border: 1px solid $silver;
+  border-radius: 4px;
+  font-family: Roboto;
+
+  button {
+    cursor: pointer;
+  }
+}
+.submitted-transaction-modal-close::after {
+  content: '\00D7';
+  font-size: 28px;
+  color: $dusty-gray;
+  position: absolute;
+  top: 2px;
+  right: 12px;
+  cursor: pointer;
+}
+.submitted-transaction-modal-divider {
+  width: 100%;
+  height: 1px;
+  margin: 17px 0 23px 0;
+  background-color: $alto;
+}
 
 // Account Modal Container
 .account-modal-container {

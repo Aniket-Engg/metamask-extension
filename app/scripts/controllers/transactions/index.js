@@ -404,6 +404,7 @@ class TransactionController extends EventEmitter {
         this.txStateManager.updateTx(txMeta, 'transactions/pending-tx-tracker#event: tx:block-update')
       }
     })
+
     this.pendingTxTracker.on('tx:retry', (txMeta) => {
       if (!('retryCount' in txMeta)) txMeta.retryCount = 0
       txMeta.retryCount++
